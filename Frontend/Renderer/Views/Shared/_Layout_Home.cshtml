@@ -1,0 +1,62 @@
+﻿@model Progress.Sitefinity.AspNetCore.Models.PageModel
+@using Progress.Sitefinity.AspNetCore.Mvc.Rendering
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Progress.Sitefinity.AspNetCore
+
+@inject Progress.Sitefinity.AspNetCore.Web.IRequestContext requestContext;
+
+<!DOCTYPE html>
+<html lang="@requestContext.Culture">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fischel en línea</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Renderer.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div data-sfcontainer="Header" class="header">
+    </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderLeft" runat="server" />
+
+    <div data-sfcontainer="Carousel" class="carousel mt-0">
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <hr>
+    <div class="container">
+        <div class="col-12 text-center">
+            <div>
+                <span>Fischel 2024. Todos los derechos reservados. |</span>
+                <span>
+                    Powered by
+                    <a aria-label="Ir a la página de Loymark" href="https://www.loymark.com/" target="_blank" rel="noopener noreferrer">
+                        <img class="logo-loymark mx-1" src="@Url.Content("~/images/logo-loymark-dark.png")" alt="Logo" height="12" />
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

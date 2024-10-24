@@ -1,0 +1,57 @@
+﻿@model List<PageModel>
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+            <img src="@Url.Content("~/images/logo-color.png")" alt="Logo" width="100" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="navbarNav">
+            <ul class="navbar-nav flex-grow-1">
+                @foreach (var pages in Model)
+                {
+                    if (pages.ShowInNavigation)
+                    {
+                        <li class="nav-item @(pages.Children.Any() ? "dropdown" : "") text-dark">
+                            <a class="nav-link @(pages.Children.Any() ? "dropdown-toggle" : "") text-dark"
+                               role="button"
+                               @(pages.Children.Any() ? "" : "href="+pages.ViewUrl)
+                               @(pages.Children.Any() ? "data-bs-toggle=dropdown aria-expanded=false" : "")>
+                               @pages.Title
+                            </a>
+
+                            @if (pages.Children.Any())
+                            {
+                                <ul class="dropdown-menu">
+                                    @foreach (var child in pages.Children)
+                                    {
+                                        if (child.ShowInNavigation)
+                                        {
+                                            <li>
+                                                <a class="dropdown-item" href="@child.ViewUrl">
+                                                    @child.Title
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                }
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.soyfischel.com/login.php" target="_blank">
+                        <img src="@Url.Content("~/images/soy-fischel-small-color.png")" alt="Logo" width="50" height="15" />
+                    </a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>

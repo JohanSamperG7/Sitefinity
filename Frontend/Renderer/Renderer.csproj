@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Progress.Sitefinity.AspNetCore" Version="15.1.8326.69" />
+    <PackageReference Include="Progress.Sitefinity.AspNetCore.FormWidgets" Version="15.1.8326.69" />
+    <PackageReference Include="Progress.Sitefinity.AspNetCore.Widgets" Version="15.1.8326.69" />
+    <PackageReference Include="Progress.Sitefinity.Renderer" Version="15.1.8326.69" />
+    <PackageReference Include="Progress.Sitefinity.RestSdk" Version="15.1.8326.69" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Sitefinity\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+</Project>
