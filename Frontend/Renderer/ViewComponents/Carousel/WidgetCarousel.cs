@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Progress.Sitefinity.AspNetCore.ViewComponents;
 
-namespace Renderer.Views.Widgets
+namespace Renderer.ViewComponents.Carousel
 {
     [SitefinityWidget]
     public class WidgetCarousel : ViewComponent

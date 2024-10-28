@@ -1,9 +1,7 @@
 ﻿using AngleSharp.Common;
-using Renderer.Models;
 using Progress.Sitefinity.RestSdk;
 using Progress.Sitefinity.RestSdk.Client;
-using Progress.Sitefinity.RestSdk.Clients.Pages.Dto;
-using Progress.Sitefinity.Clients.LayoutService.Dto;
+using Renderer.Models;
 
 namespace Renderer.ViewModel
 {

@@ -2,7 +2,7 @@
 using Progress.Sitefinity.AspNetCore.ViewComponents;
 using Renderer.ViewModel;
 
-namespace Renderer.Views.Widgets
+namespace Renderer.ViewComponents.Navbar
 {
     [SitefinityWidget]
     public class WidgetNavBar : ViewComponent
@@ -19,5 +19,11 @@ namespace Renderer.Views.Widgets
             var pages = await _viewModel.GetAllPagesAsync();
             return View("Default", pages);
         }
+    }
+
+    public class NavbarEntity()
+    {
+        public string Name { get; set; } = string.Empty;
+        public bool ShowLogo { get; set; }
     }
 }

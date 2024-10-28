@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Sitefinity\" />
+    <Folder Include="Views\Widgets\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

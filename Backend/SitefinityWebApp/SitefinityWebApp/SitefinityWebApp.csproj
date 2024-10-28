@@ -1124,6 +1124,11 @@
     <Content Include="App_Data\RadCaptcha\X.wav" />
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="Global.asax" />
+    <Content Include="Mvc\Controllers\readme.txt" />
+    <Content Include="Mvc\Models\readme.txt" />
+    <Content Include="Mvc\Views\readme.txt" />
+    <Content Include="Mvc\Views\Shared\readme.txt" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\css\main.min.css" />
     <Content Include="ResourcePackages\Bootstrap4\assets\dist\js\bootstrap.min.js" />
@@ -1166,7 +1171,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Mvc\Controllers\TetsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourcesLbl\LabelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminApp\kendo-font-icons.e99ace3ee67afab5.ttf" />
@@ -1490,6 +1500,9 @@
     <Analyzer Include="..\packages\AWSSDK.SQS.3.7.300.2\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
     <Analyzer Include="..\packages\AWSSDK.TranscribeService.3.7.300.2\analyzers\dotnet\cs\AWSSDK.TranscribeService.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.TranscribeService.3.7.300.2\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mvc\Views\Tets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
