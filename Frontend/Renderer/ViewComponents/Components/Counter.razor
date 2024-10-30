@@ -1,0 +1,20 @@
+﻿@namespace Renderer.Components
+@using Microsoft.JSInterop
+
+@inject IJSRuntime JS
+
+<div>
+    <p>Current count: @count</p>
+    <button @onclick="IncrementCount">Increment</button>
+</div>
+
+@code {
+    private int count = 5;
+
+    private async void IncrementCount()
+    {
+        await JS.InvokeVoidAsync("console.log", "El botón fue clickeado.");
+        count++;
+        StateHasChanged();
+    }
+}
